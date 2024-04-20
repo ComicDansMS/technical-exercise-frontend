@@ -6,12 +6,14 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { FormsModule } from '@angular/forms';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
-    MovieListComponent
+    MovieListComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,

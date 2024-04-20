@@ -2,32 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base */
+
 input:focus {
     outline: none;
 }
 
 body {
-    font-size: 1.6rem;
-    padding: 4rem 2rem;
+    @apply bg-slate-900 text-slate-300 font-light text-lg px-8 py-16;
 }
 
 h1 {
-    font-size: 4rem;
+    @apply text-7xl;
 }
 
 h2 {
-    font-size: 3.5rem;
+    @apply text-5xl;
 }
 
 h3 {
-    font-size: 2.5rem;
+    @apply text-4xl;
 }
 
 h4 {
-    font-size: 2rem;
+    @apply text-3xl;
 }
 
-.page-width {
+/* Layout */
+
+.l-width {
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.l-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: auto 1fr;
 }
