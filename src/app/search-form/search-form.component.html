@@ -6,9 +6,10 @@
       name="search"
       class="flex-grow px-10 py-3 text-4xl font-thin bg-transparent cursor-pointer"
       placeholder="Search"
+      [(ngModel)]="searchQuery.title"
     >
 
-    <div class="flex justify-center items-center w-16 h-full">
+    <div class="flex justify-center items-center w-16 pr-2 h-full">
       <button class="flex justify-center items-center" (click)="$event.preventDefault(); handleSubmit()">
         <svg class="text-slate-400 hover:text-slate-300 w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 30 30" width="30px" height="30px">

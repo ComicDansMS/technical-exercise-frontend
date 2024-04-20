@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Movie } from 'src/shared/models/movie';
+import { SearchQuery } from 'src/shared/models/searchQuery';
+import { EventService } from 'src/shared/services/eventService';
+import { MovieService } from 'src/shared/services/movieService';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'technical-exercise-frontend';
+  movies: Movie[] = [];
+
+  constructor(events: EventService, private movieService: MovieService) {
+    events.listen('get-movies', (query: SearchQuery) => this.getMovies(query));
+  }
+
+  getMovies(query: SearchQuery) {
+    this.movieService.getMovies(query).subscribe(
+      (data: Movie[]) => {
+        this.movies = data;
+        console.log({data})
+      },
+      (error: any) => {
+        // TODO: handle error properly
+        console.error('Error getting movies: ', error.message)
+      }
+    )
+  }
 }

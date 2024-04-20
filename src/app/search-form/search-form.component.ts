@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SearchQuery } from 'src/shared/models/searchQuery';
+import { EventService } from 'src/shared/services/eventService';
 
 @Component({
   selector: 'search-form',
@@ -6,9 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent {
-  inputText: string = '';
+  constructor(
+    private events: EventService
+  ) {}
+
+  searchQuery: SearchQuery = {
+    title: null,
+    year: null,
+    genre: null
+  }
 
   handleSubmit(): void {
-    console.log('submit')
+    if (!this.searchQuery.title || this.searchQuery.title === '') return;
+    
+    this.events.emit('get-movies', this.searchQuery)
+    this.searchQuery.title = '';
   }
 }
