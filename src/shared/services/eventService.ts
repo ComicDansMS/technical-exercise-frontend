@@ -7,7 +7,7 @@ import { Subject } from "rxjs";
 export class EventService {
     private subject = new Subject();
 
-    emit(eventName: string, payload: any) {
+    emit(eventName: string, payload?: any) {
         this.subject.next({ eventName, payload });
     }
 

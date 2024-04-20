@@ -5,52 +5,52 @@
 /* Base */
 
 input:focus {
-    outline: none;
+	outline: none;
 }
 
 body {
-    @apply bg-gray-950 text-slate-300 font-light text-lg px-8 py-16;
+	@apply bg-gray-950 text-slate-300 font-light text-lg px-8 py-16;
 }
 
 .h1,
 h1 {
-    @apply text-7xl;
+	@apply text-7xl;
 }
 
 .h2,
 h2 {
-    @apply text-5xl;
+	@apply text-5xl;
 }
 
 .h3,
 h3 {
-    @apply text-4xl;
+	@apply text-4xl;
 }
 
 .h4,
 h4 {
-    @apply text-3xl;
+	@apply text-3xl;
 }
 
 /* Layout */
 
 .l-width {
-    max-width: 1400px;
-    margin: 0 auto;
+	max-width: 1400px;
+	margin: 0 auto;
 }
 
 .l-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: auto 1fr;
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: auto 1fr;
 }
 
 /* Utilities */
 
 .u-border {
-    @apply border border-slate-600;
+	@apply border border-slate-600;
 }
 
 .u-rounded {
-    @apply rounded-lg;
+	@apply rounded-lg;
 }

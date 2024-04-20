@@ -12,11 +12,19 @@ import movieData from 'temp/movieData';
 })
 export class AppComponent {
   searchPerformed: boolean = false;
+  searchQuery: SearchQuery = {
+    title: null,
+    year: null,
+    genre: null
+  }
   // movies: Movie[] = [];
   movies: Movie[] = movieData;
 
   constructor(events: EventService, private movieService: MovieService) {
-    events.listen('get-movies', (query: SearchQuery) => this.getMovies(query));
+    events.listen('set-title', (titleInput: string) => this.searchQuery.title = titleInput);
+    events.listen('set-year', (yearList: number[]) => this.searchQuery.year = yearList);
+    events.listen('set-genre', (genreList: string[]) => this.searchQuery.genre = genreList);
+    events.listen('get-movies', () => this.getMovies(this.searchQuery));
   }
 
   getMovies(query: SearchQuery) {
