@@ -20,8 +20,6 @@ export class SearchFormComponent {
 
   handleSubmit(): void {
     if (!this.searchQuery.title || this.searchQuery.title === '') return;
-    
-    this.events.emit('get-movies', this.searchQuery)
-    this.searchQuery.title = '';
+    this.events.emit('get-movies', this.searchQuery);
   }
 }

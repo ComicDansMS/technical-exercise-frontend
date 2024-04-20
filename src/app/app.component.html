@@ -5,6 +5,9 @@
 
   <div class="l-grid">
     <filters></filters>
-    <movie-list></movie-list>
+    <movie-list
+      [movies]="movies"
+      [searchPerformed]="searchPerformed"
+    ></movie-list>
   </div>
 </div>

@@ -3,6 +3,7 @@ import { Movie } from 'src/shared/models/movie';
 import { SearchQuery } from 'src/shared/models/searchQuery';
 import { EventService } from 'src/shared/services/eventService';
 import { MovieService } from 'src/shared/services/movieService';
+import movieData from 'temp/movieData';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { MovieService } from 'src/shared/services/movieService';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  movies: Movie[] = [];
+  searchPerformed: boolean = false;
+  // movies: Movie[] = [];
+  movies: Movie[] = movieData;
 
   constructor(events: EventService, private movieService: MovieService) {
     events.listen('get-movies', (query: SearchQuery) => this.getMovies(query));
@@ -20,7 +23,8 @@ export class AppComponent {
     this.movieService.getMovies(query).subscribe(
       (data: Movie[]) => {
         this.movies = data;
-        console.log({data})
+        this.searchPerformed = true;
+        console.log({data});
       },
       (error: any) => {
         // TODO: handle error properly

@@ -1,3 +1,14 @@
-<div class="border border-slate-800">
-    <p>movie-list works!</p>
+<div *ngIf="movies.length === 0; else showMovies">
+	<h2 class="h3 text-center">{{ noMoviesMessage }}</h2>
 </div>
+
+<ng-template #showMovies>
+	<ul class="flex flex-col">
+		<movie-item
+			*ngFor="let movie of movies; let isFirst = first"
+			[movie]="movie"
+			[isFirst]="isFirst"
+		>
+		</movie-item>
+	</ul>
+</ng-template>

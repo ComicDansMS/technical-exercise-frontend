@@ -9,21 +9,25 @@ input:focus {
 }
 
 body {
-    @apply bg-slate-900 text-slate-300 font-light text-lg px-8 py-16;
+    @apply bg-gray-950 text-slate-300 font-light text-lg px-8 py-16;
 }
 
+.h1,
 h1 {
     @apply text-7xl;
 }
 
+.h2,
 h2 {
     @apply text-5xl;
 }
 
+.h3,
 h3 {
     @apply text-4xl;
 }
 
+.h4,
 h4 {
     @apply text-3xl;
 }
@@ -39,4 +43,14 @@ h4 {
     display: grid;
     gap: 2rem;
     grid-template-columns: auto 1fr;
+}
+
+/* Utilities */
+
+.u-border {
+    @apply border border-slate-600;
+}
+
+.u-rounded {
+    @apply rounded-lg;
 }

@@ -1,0 +1,27 @@
+<li class="flex gap-4" [ngClass]="{'pb-4': isFirst, 'py-4': !isFirst}">
+	<div class="w-20">
+		<div class="relative h-0 pb-[147%] bg-gray-700">
+			<div class="absolute inset-0 overflow-hidden">
+					<img src="{{ movie.thumbnail }}" class="object-cover w-full h-full" *ngIf="movie.thumbnail; else showPlaceholder">
+					<ng-template #showPlaceholder>
+						<div class="flex justify-center items-center h-full w-full p-4 text-gray-950">
+							<icon-film></icon-film>
+						</div>
+					</ng-template>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex flex-col">
+		<h3>{{ movie.title }}</h3>
+		<p>{{ movie.year }}</p>
+		
+		<div class="flex-grow flex items-end">
+			<ul class="flex gap-2">
+				<li class="rounded-full py-1 px-4 bg-gray-900 text-sm" *ngFor="let genre of movie.genres">
+					{{ genre }}
+				</li>
+			</ul>
+		</div>
+	</div>
+</li>
