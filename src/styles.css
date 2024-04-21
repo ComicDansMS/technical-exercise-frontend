@@ -47,7 +47,7 @@ h4 {
 .l-grid {
 	display: grid;
 	gap: 2rem;
-	grid-template-columns: 16rem 1fr 16rem;
+	grid-template-columns: 16rem 1fr 18rem;
 }
 
 /* Typography */
