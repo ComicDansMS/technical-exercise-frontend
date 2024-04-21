@@ -40,12 +40,40 @@ h4 {
 /* Layout */
 
 .l-width {
-	max-width: 1400px;
+	max-width: 1600px;
 	margin: 0 auto;
 }
 
 .l-grid {
 	display: grid;
 	gap: 2rem;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: 16rem 1fr 16rem;
+}
+
+/* Typography */
+
+.t-heading-sm {
+	@apply text-lg font-medium;
+}
+
+/* Utilities */
+
+.u-border {
+	@apply border border-gray-800;
+}
+
+.u-border-b {
+	@apply border-b border-gray-800;
+}
+
+.u-border-t {
+	@apply border-t border-gray-800;
+}
+
+.u-border-l {
+	@apply border-l border-gray-800;
+}
+
+.u-border-r {
+	@apply border-r border-gray-800;
 }

@@ -1,4 +1,4 @@
-<li class="flex gap-4" [ngClass]="{'pb-4': isFirst, 'py-4': !isFirst}">
+<li class="flex gap-4 u-border-b" [ngClass]="{'pb-4': isFirst, 'py-4': !isFirst}">
 	<div class="w-20">
 		<div class="relative h-0 pb-[147%] bg-gray-700">
 			<div class="absolute inset-0 overflow-hidden">
@@ -14,7 +14,7 @@
 
 	<div class="flex flex-col">
 		<h3>{{ movie.title }}</h3>
-		<p>{{ movie.year }}</p>
+		<span>{{ movie.year }}</span>
 		
 		<div class="flex-grow flex items-end">
 			<ul class="flex gap-2">

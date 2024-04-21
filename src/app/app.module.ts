@@ -16,6 +16,10 @@ import { IconSearchComponent } from './icons/icon-search/icon-search.component';
 import { IconAddComponent } from './icons/icon-add/icon-add.component';
 import { IconRemoveComponent } from './icons/icon-remove/icon-remove.component';
 import { FilterFormComponent } from './filter/filter-form/filter-form.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { FavouritesItemComponent } from './favourites/favourites-item/favourites-item.component';
+import { MainListComponent } from './main-list/main-list.component';
+import { RecommendedListComponent } from './recommended-list/recommended-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { FilterFormComponent } from './filter/filter-form/filter-form.component'
     IconSearchComponent,
     IconAddComponent,
     IconRemoveComponent,
-    FilterFormComponent
+    FilterFormComponent,
+    FavouritesComponent,
+    FavouritesItemComponent,
+    MainListComponent,
+    RecommendedListComponent
   ],
   imports: [
     BrowserModule,

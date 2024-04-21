@@ -1,0 +1,12 @@
+<div class="flex gap-4 items-center justify-between py-1 group">
+  <span class="truncate">{{ movie.title }} <span class="ml-1 opacity-50">({{ movie.year }})</span> </span>
+
+  <div class="w-4 h-4">
+    <button
+      class="hidden group-hover:block w-full h-full cursor-pointer"
+      (click)="removeFavourite(index)"
+    >
+      <icon-remove></icon-remove>
+    </button>
+  </div>
+</div>

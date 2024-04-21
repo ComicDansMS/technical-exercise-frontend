@@ -1,0 +1,11 @@
+<h2 class="t-heading-sm mb-[0.625rem]">
+  Favourites
+</h2>
+
+<ul>
+  <favourites-item
+    *ngFor="let movie of favourites; index as index"
+    [movie]="movie"
+    [index]="index"
+  ></favourites-item>
+</ul>
