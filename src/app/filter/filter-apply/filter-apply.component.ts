@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchQuery } from 'src/shared/models/searchQuery';
 import { EventService } from 'src/shared/services/eventService';
-import buttonState from '../utilities/buttonState';
+import buttonState from '../../utilities/buttonState';
 
 @Component({
   selector: 'filter-apply',
