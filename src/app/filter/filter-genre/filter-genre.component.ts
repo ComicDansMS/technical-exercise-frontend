@@ -11,9 +11,7 @@ export class FilterGenreComponent {
   genreInput!: string;
   genreList!: string[];
 
-  constructor(
-    private events: EventService
-  ) {
+  constructor(private events: EventService) {
     events.listen('query-filters-updated', (searchQuery: SearchQuery) => this.genreList = searchQuery.genreList);
   }
 

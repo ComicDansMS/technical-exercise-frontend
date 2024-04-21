@@ -8,11 +8,9 @@ import { EventService } from 'src/shared/services/eventService';
 })
 export class SearchComponent {
   disabled: boolean = true;
-  constructor(
-    private events: EventService
-  ) {}
-
   titleInput!: string;
+
+  constructor(private events: EventService) {}
 
   setTitle(): void {
     this.events.emit('set-title', this.titleInput);

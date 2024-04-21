@@ -11,9 +11,7 @@ export class FilterApplyComponent {
   disabled: boolean = true;
   searchQuery!: SearchQuery;
 
-  constructor(
-    private events: EventService
-  ) {
+  constructor(private events: EventService) {
     events.listen('query-filters-updated', (updatedQuery: SearchQuery) => {
       this.searchQuery = updatedQuery;
       this.disabled = this.buttonState(this.searchQuery);

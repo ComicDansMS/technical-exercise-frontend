@@ -18,7 +18,9 @@ export class MovieListComponent {
   }
   movies: Movie[] = [];
 
-  constructor(private events: EventService, private movieService: MovieService) {
+  constructor(
+    private events: EventService,
+    private movieService: MovieService) {
     this.registerEventListeners();
     this.subscribeToMovies();
   }

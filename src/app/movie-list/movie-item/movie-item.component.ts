@@ -15,9 +15,7 @@ export class MovieItemComponent implements OnInit {
   isFavourite!: boolean;
   private subscription!: Subscription;
 
-  constructor(
-    private favouritesService: FavouritesService
-  ){}
+  constructor(private favouritesService: FavouritesService){}
 
   ngOnInit() {
     this.subscription = this.favouritesService.favourites$.subscribe(favourites => {

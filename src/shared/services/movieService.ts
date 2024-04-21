@@ -12,9 +12,7 @@ export class MovieService {
 	private moviesSource = new BehaviorSubject<Movie[]>([]);
 	movies$ = this.moviesSource.asObservable();
 
-	constructor(
-		private http: HttpClient
-	) { }
+	constructor(private http: HttpClient) { }
 
 	getMovies(query: SearchQuery) {
 		const options = {

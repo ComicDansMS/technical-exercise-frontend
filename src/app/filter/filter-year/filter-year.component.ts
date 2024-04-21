@@ -11,9 +11,7 @@ export class FilterYearComponent {
   yearInput!: string;
   yearList!: number[];
 
-  constructor(
-    private events: EventService
-  ) {
+  constructor(private events: EventService) {
     events.listen('query-filters-updated', (searchQuery: SearchQuery) => this.yearList = searchQuery.yearList);
   }
 
