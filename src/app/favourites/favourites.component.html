@@ -1,10 +1,12 @@
-<h2 class="t-heading-sm mb-[0.625rem]">
-  Favourites
-</h2>
+<div class="u-card">
+  <h2 class="t-heading-sm mb-[0.625rem]">
+    Favourites
+  </h2>
 
-<ul>
-  <favourites-item
-    *ngFor="let movie of favourites"
-    [movie]="movie"
-  ></favourites-item>
-</ul>
+  <ul>
+    <favourites-item
+      *ngFor="let movie of favourites"
+      [movie]="movie"
+    ></favourites-item>
+  </ul>
+</div>

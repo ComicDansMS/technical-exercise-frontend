@@ -14,7 +14,7 @@ input:focus {
 }
 
 body {
-	@apply bg-gray-950 text-slate-300 font-light text-lg px-8 py-16 tracking-wide;
+	@apply bg-gray-950 text-slate-300 font-light text-base px-8 py-16 tracking-wide;
 }
 
 .h1,
@@ -47,16 +47,39 @@ h4 {
 .l-grid {
 	display: grid;
 	gap: 2rem;
-	grid-template-columns: 16rem 1fr 18rem;
+	grid-template-columns: 18rem 1fr 18rem;
 }
 
 /* Typography */
 
 .t-heading-sm {
-	@apply text-lg font-normal tracking-wider;
+	@apply text-base font-normal tracking-wider;
 }
 
 /* Utilities */
+
+.u-card {
+	@apply bg-gray-900 rounded-lg p-4;
+	min-height: 29.25rem;
+}
+
+.u-input-bg {
+	@apply bg-gray-800;
+}
+
+.u-button-hover:hover {
+	@apply text-slate-100;
+}
+
+.u-button-hover:disabled {
+	@apply text-slate-600;
+}
+
+.u-input-bg:hover,
+.u-input-bg:focus,
+.u-input-bg:focus-within {
+	@apply bg-gray-700;
+}
 
 .u-border {
 	@apply border border-gray-800;

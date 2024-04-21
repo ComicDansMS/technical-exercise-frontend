@@ -1,6 +1,6 @@
 <form class="flex w-full">
   <label for="search" class="sr-only">Search</label>
-  <div class="flex w-full bg-slate-800 hover:bg-slate-700 focus-within:bg-slate-700 rounded-xl overflow-hidden cursor-pointer">
+  <div class="u-input-bg flex w-full focus-within:bg-slate-700 rounded-lg overflow-hidden cursor-pointer">
     <input
       type="text"
       name="search"
@@ -13,7 +13,7 @@
     <div class="flex justify-center items-center w-16 pr-2 h-full">
       <button
         #searchButton
-        class="flex justify-center items-center text-slate-400 hover:text-slate-300 focus:text-slate-300 disabled:text-slate-500"
+        class="flex justify-center items-center u-button-hover"
         (click)="$event.preventDefault(); searchButton.blur(); handleSubmit()"
         [attr.disabled]="disabled ? '' : null"
       >
