@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from 'src/shared/models/movie';
 import { EventService } from 'src/shared/services/eventService';
+import { FavouritesService } from 'src/shared/services/favouritesService';
 
 @Component({
   selector: 'favourites-item',
@@ -12,10 +13,11 @@ export class FavouritesItemComponent {
   @Input() index!: number;
 
   constructor(
-    private events: EventService
+    private events: EventService,
+    private favouritesService: FavouritesService
   ) {}
 
-  removeFavourite(index: number) {
-    this.events.emit('remove-favourite', index)
+  removeFavourite() {
+    this.favouritesService.removeFavourite(this.movie);
   }
 }

@@ -19,22 +19,22 @@ body {
 
 .h1,
 h1 {
-	@apply text-7xl tracking-wide;
+	@apply text-7xl tracking-wider font-thin;
 }
 
 .h2,
 h2 {
-	@apply text-5xl tracking-wide;
+	@apply text-5xl tracking-wider font-thin;
 }
 
 .h3,
 h3 {
-	@apply text-4xl tracking-wide;
+	@apply text-4xl tracking-wider font-thin;
 }
 
 .h4,
 h4 {
-	@apply text-3xl tracking-wide;
+	@apply text-3xl tracking-wider font-thin;
 }
 
 /* Layout */
@@ -53,7 +53,7 @@ h4 {
 /* Typography */
 
 .t-heading-sm {
-	@apply text-lg font-medium;
+	@apply text-lg font-normal tracking-wider;
 }
 
 /* Utilities */

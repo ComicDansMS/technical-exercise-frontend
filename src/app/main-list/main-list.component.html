@@ -4,15 +4,27 @@
     [ngClass]="{'bg-gray-700': showMovies}"
     (click)="$event.preventDefault(); switchCards('movies')"
   >
-    <span>Movies</span>
+    <span class="t-heading-sm">Movies</span>
   </button>
-  <button
-    class="px-12 py-2 rounded-tl-md rounded-tr-md cursor-pointer bg-gray-700"
+  <div
+    class="relative px-12 py-2 rounded-tl-md rounded-tr-md cursor-pointer bg-gray-700"
     [ngClass]="{'bg-gray-700': !showMovies}"
     (click)="$event.preventDefault(); switchCards('recommended')"
   >
-    <span>Recommended</span>
-  </button>
+    <button class="t-heading-sm">
+      Recommended
+    </button>
+
+    <button
+      class="absolute right-4 top-1/2 -translate-y-1/2 h-6 w-6 p-1"
+      *ngIf="!showMovies"
+      (click)="refreshRecommended()"
+    >
+      <div class="hover:rotate-180 transition duration-300">
+        <icon-refresh></icon-refresh>
+      </div>
+    </button>
+  </div>
 </div>
 
 <movie-list *ngIf="showMovies; else recommended"></movie-list>

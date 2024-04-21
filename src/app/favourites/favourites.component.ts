@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Movie } from 'src/shared/models/movie';
-import { EventService } from 'src/shared/services/eventService';
-import favouriteData from 'temp/favouriteData';
+import { FavouritesService } from 'src/shared/services/favouritesService';
 
 @Component({
   selector: 'favourites',
   templateUrl: './favourites.component.html',
   styleUrls: ['./favourites.component.css']
 })
-export class FavouritesComponent {
-  // favourites: Movie[] = [];
-  favourites: Movie[] = favouriteData;
+export class FavouritesComponent implements OnInit {
+  favourites: Movie[] = [];
+  private subscription!: Subscription;
 
-  constructor(events: EventService) {
-    events.listen('remove-favourite', (index: number) => {
-      this.favourites.splice(index, 1);
+  constructor(private favouritesService: FavouritesService) {}
+
+  ngOnInit() {
+    this.subscription = this.favouritesService.favourites$.subscribe(updatedFavourites => {
+      this.favourites = updatedFavourites;
     });
   }
 }

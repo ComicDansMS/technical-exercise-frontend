@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { EventService } from 'src/shared/services/eventService';
+import { RecommendedService } from 'src/shared/services/recommendedService';
 
 @Component({
   selector: 'main-list',
@@ -8,11 +10,22 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class MainListComponent {
   showMovies: boolean = true;
 
+  constructor(
+    private recommendedService: RecommendedService,
+    private events: EventService
+  ) {
+    this.events.listen('get-movies', () => this.showMovies = true);
+  }
+
   switchCards(card: string) {
     if (card === 'movies') {
       this.showMovies = true;
     } else {
       this.showMovies = false;
     }
+  }
+
+  refreshRecommended() {
+    
   }
 }

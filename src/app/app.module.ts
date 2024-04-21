@@ -20,6 +20,8 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { FavouritesItemComponent } from './favourites/favourites-item/favourites-item.component';
 import { MainListComponent } from './main-list/main-list.component';
 import { RecommendedListComponent } from './main-list/recommended-list/recommended-list.component';
+import { IconRefreshComponent } from './icons/icon-refresh/icon-refresh.component';
+import { IconHeartComponent } from './icons/icon-heart/icon-heart.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { RecommendedListComponent } from './main-list/recommended-list/recommend
     FavouritesComponent,
     FavouritesItemComponent,
     MainListComponent,
-    RecommendedListComponent
+    RecommendedListComponent,
+    IconRefreshComponent,
+    IconHeartComponent
   ],
   imports: [
     BrowserModule,
