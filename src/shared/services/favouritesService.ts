@@ -31,8 +31,4 @@ export class FavouritesService {
 	get favourites(): Movie[] {
 		return this.favouritesSource.getValue();
 	}
-
-	get count(): number {
-		return this.favouritesSource.getValue().length;
-	}
 }
