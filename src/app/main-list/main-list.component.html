@@ -1,13 +1,13 @@
 <div class="flex w-full u-border-b mb-4">
   <button
-    class="px-8 py-2 rounded-tl-md rounded-tr-md cursor-pointer bg-gray-700"
+    class="px-12 py-2 rounded-tl-md rounded-tr-md cursor-pointer bg-gray-700"
     [ngClass]="{'bg-gray-700': showMovies}"
     (click)="$event.preventDefault(); switchCards('movies')"
   >
     <span>Movies</span>
   </button>
   <button
-    class="px-8 py-2 rounded-tl-md rounded-tr-md cursor-pointer bg-gray-700"
+    class="px-12 py-2 rounded-tl-md rounded-tr-md cursor-pointer bg-gray-700"
     [ngClass]="{'bg-gray-700': !showMovies}"
     (click)="$event.preventDefault(); switchCards('recommended')"
   >

@@ -18,7 +18,6 @@ export class FilterGenreComponent {
   }
 
   addGenre(): void {
-    console.log('addGenre', this.genreInput)
     if (!this.genreInput || this.genreInput === '') return;
     this.events.emit('set-genre', this.genreInput);
     this.genreInput = '';

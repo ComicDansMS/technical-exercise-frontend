@@ -60,7 +60,6 @@ export class MovieListComponent {
   subscribeToMovies() {
     this.movieService.movies$.subscribe(movies => {
       this.movies = movies;
-      this.searchPerformed = true;
     });
   }
 
@@ -70,8 +69,9 @@ export class MovieListComponent {
       && this.searchQuery.yearList.length === 0
       && this.searchQuery.genreList.length === 0
     ) { return; }
-
+    
     this.movieService.getMovies(this.searchQuery);
+    this.searchPerformed = true;
   }
 
   get noMoviesMessage(): string {

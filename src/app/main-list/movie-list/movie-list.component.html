@@ -1,7 +1,7 @@
 <h2 class="sr-only">Movies</h2>
 
 <div *ngIf="movies.length === 0; else showMovies">
-	<span class="h3 text-center mt-16">{{ noMoviesMessage }}</span>
+	<span class="block h3 text-center mt-16">{{ noMoviesMessage }}</span>
 </div>
 
 <ng-template #showMovies>
