@@ -48,6 +48,8 @@ export class MovieService {
 			params = params.append('genre', JSON.stringify(query.genreList));
 		}
 
+		params = params.append('limit', 1000);
+
 		return params;
 	}
 
