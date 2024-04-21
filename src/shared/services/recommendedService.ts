@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
 import { Movie } from "../models/movie";
 import { BehaviorSubject, catchError, throwError } from "rxjs";
 import { environment } from "src/environment/environment";
@@ -34,6 +34,7 @@ export class RecommendedService {
 	private createHeaders() {
 		let headers = new HttpHeaders();
 		headers = headers.append('x-api-key', environment.apiKey);
+		headers = headers.append('Content-Type', 'application/json');
 		return headers
 	}
 

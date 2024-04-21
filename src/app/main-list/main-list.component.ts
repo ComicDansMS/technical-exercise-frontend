@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EventService } from 'src/shared/services/eventService';
+import { FavouritesService } from 'src/shared/services/favouritesService';
 import { RecommendedService } from 'src/shared/services/recommendedService';
 
 @Component({
@@ -12,6 +13,7 @@ export class MainListComponent {
 
   constructor(
     private recommendedService: RecommendedService,
+    private favouritesService: FavouritesService,
     private events: EventService
   ) {
     this.events.listen('get-movies', () => this.showMovies = true);
@@ -26,6 +28,7 @@ export class MainListComponent {
   }
 
   refreshRecommended() {
-    
+    const favourites = this.favouritesService.favourites;
+    this.recommendedService.getRecommended(favourites);
   }
 }

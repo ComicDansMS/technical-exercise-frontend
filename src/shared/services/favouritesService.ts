@@ -27,4 +27,8 @@ export class FavouritesService {
 	movieMatch(movieA: Movie, movieB: Movie) {
 		return createMovieId(movieA) === createMovieId(movieB);
 	}
+
+	get favourites(): Movie[] {
+		return this.favouritesSource.getValue();
+	}
 }
