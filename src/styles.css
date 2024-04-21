@@ -51,7 +51,3 @@ h4 {
 .u-border {
 	@apply border border-slate-600;
 }
-
-.u-rounded {
-	@apply rounded-lg;
-}

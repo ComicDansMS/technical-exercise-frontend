@@ -3,7 +3,6 @@ import { Movie } from 'src/shared/models/movie';
 import { SearchQuery } from 'src/shared/models/searchQuery';
 import { EventService } from 'src/shared/services/eventService';
 import { MovieService } from 'src/shared/services/movieService';
-import movieData from 'temp/movieData';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +16,7 @@ export class AppComponent {
     yearList: [],
     genreList: []
   }
-  // movies: Movie[] = [];
-  movies: Movie[] = movieData;
+  movies: Movie[] = [];
 
   constructor(events: EventService, private movieService: MovieService) {
     events.listen('set-title', (titleInput: string) => this.searchQuery.title = titleInput);
