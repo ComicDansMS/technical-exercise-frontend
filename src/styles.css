@@ -9,6 +9,10 @@ input:focus {
 	outline: none;
 }
 
+*::selection {
+	@apply bg-slate-500 text-slate-200;
+}
+
 body {
 	@apply bg-gray-950 text-slate-300 font-light text-lg px-8 py-16 tracking-wide;
 }
@@ -44,10 +48,4 @@ h4 {
 	display: grid;
 	gap: 2rem;
 	grid-template-columns: auto 1fr;
-}
-
-/* Utilities */
-
-.u-border {
-	@apply border border-slate-600;
 }

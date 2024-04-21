@@ -23,13 +23,11 @@ export class AppComponent {
 
     events.listen('set-year', (yearInput: number) => {
       this.searchQuery.yearList.push(yearInput);
-      console.log(this.searchQuery)
       events.emit('query-filters-updated', this.searchQuery);
     });
 
     events.listen('remove-year', (index: number) => {
       this.searchQuery.yearList.splice(index, 1);
-      console.log(this.searchQuery)
       events.emit('query-filters-updated', this.searchQuery);
     });
 
@@ -40,11 +38,18 @@ export class AppComponent {
 
     events.listen('remove-genre', (index: number) => {
       this.searchQuery.genreList.splice(index, 1);
-      console.log(this.searchQuery)
       events.emit('query-filters-updated', this.searchQuery);
     });
 
-    events.listen('get-movies', () => this.getMovies(this.searchQuery));
+    events.listen('get-movies', () => {
+      if (
+        this.searchQuery.title === null
+        && this.searchQuery.yearList.length === 0
+        && this.searchQuery.genreList.length === 0
+      ) { return; }
+
+      this.getMovies(this.searchQuery)
+    });
   }
 
   getMovies(query: SearchQuery) {
@@ -52,7 +57,6 @@ export class AppComponent {
       (data: Movie[]) => {
         this.movies = data;
         this.searchPerformed = true;
-        console.log({data});
       },
       (error: any) => {
         console.error('Error getting movies: ', error.message)

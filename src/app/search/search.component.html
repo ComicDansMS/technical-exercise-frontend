@@ -13,8 +13,9 @@
     <div class="flex justify-center items-center w-16 pr-2 h-full">
       <button
         #searchButton
-        class="flex justify-center items-center text-slate-400 hover:text-slate-300"
+        class="flex justify-center items-center text-slate-400 hover:text-slate-300 focus:text-slate-300 disabled:text-slate-500"
         (click)="$event.preventDefault(); searchButton.blur(); handleSubmit()"
+        [attr.disabled]="disabled ? '' : null"
       >
         <div class="w-8 h-8">
           <icon-search></icon-search>

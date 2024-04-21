@@ -7,6 +7,7 @@ import { EventService } from 'src/shared/services/eventService';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+  disabled: boolean = true;
   constructor(
     private events: EventService
   ) {}
@@ -15,6 +16,12 @@ export class SearchComponent {
 
   setTitle(): void {
     this.events.emit('set-title', this.titleInput);
+
+    if (this.titleInput.length) {
+      this.disabled = false;
+    } else {
+      this.disabled = true
+    }
   }
 
   handleSubmit(): void {
