@@ -9,7 +9,7 @@ import { RecommendedService } from 'src/shared/services/recommendedService';
   styleUrls: ['./main-list.component.css']
 })
 export class MainListComponent {
-  showMovies: boolean = true;
+  showMovies: boolean = false;
 
   constructor(
     private recommendedService: RecommendedService,
