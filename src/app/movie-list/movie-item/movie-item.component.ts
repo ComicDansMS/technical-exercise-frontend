@@ -40,7 +40,5 @@ export class MovieItemComponent implements OnInit {
 
       return favouriteId === movieId;
     })
-
-    console.log('isFavourite', this.isFavourite)
   }
 }

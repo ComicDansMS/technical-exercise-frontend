@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchQuery } from 'src/shared/models/searchQuery';
 import { EventService } from 'src/shared/services/eventService';
-import buttonState from '../../utilities/buttonState';
 
 @Component({
   selector: 'filter-apply',
@@ -17,11 +16,25 @@ export class FilterApplyComponent {
   ) {
     events.listen('query-filters-updated', (updatedQuery: SearchQuery) => {
       this.searchQuery = updatedQuery;
-      this.disabled = buttonState(this.searchQuery);
+      this.disabled = this.buttonState(this.searchQuery);
     });
   }
 
   handleApply() {
     this.events.emit('get-movies');
+  }
+
+  buttonState(searchQuery: SearchQuery) {
+    let disabled = true;
+  
+    if (
+      searchQuery.title
+      || searchQuery.yearList.length
+      ||searchQuery.genreList.length 
+    ) {
+      disabled = false;
+    }
+  
+    return disabled;
   }
 }

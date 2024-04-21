@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
-import { MovieListComponent } from './main-list/movie-list/movie-list.component';
-import { MovieItemComponent } from './main-list/movie-list/movie-item/movie-item.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieItemComponent } from './movie-list/movie-item/movie-item.component';
 import { FilterComponent } from './filter/filter.component';
 import { FilterYearComponent } from './filter/filter-year/filter-year.component';
 import { FilterApplyComponent } from './filter/filter-apply/filter-apply.component';
@@ -18,8 +18,6 @@ import { IconRemoveComponent } from './icons/icon-remove/icon-remove.component';
 import { FilterFormComponent } from './filter/filter-form/filter-form.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { FavouritesItemComponent } from './favourites/favourites-item/favourites-item.component';
-import { MainListComponent } from './main-list/main-list.component';
-import { RecommendedListComponent } from './main-list/recommended-list/recommended-list.component';
 import { IconRefreshComponent } from './icons/icon-refresh/icon-refresh.component';
 import { IconHeartComponent } from './icons/icon-heart/icon-heart.component';
 
@@ -40,8 +38,6 @@ import { IconHeartComponent } from './icons/icon-heart/icon-heart.component';
     FilterFormComponent,
     FavouritesComponent,
     FavouritesItemComponent,
-    MainListComponent,
-    RecommendedListComponent,
     IconRefreshComponent,
     IconHeartComponent
   ],
