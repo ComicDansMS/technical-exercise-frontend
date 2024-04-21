@@ -2,14 +2,12 @@ import { Injectable } from "@angular/core";
 import { Movie } from "../models/movie";
 import { BehaviorSubject } from "rxjs";
 import createMovieId from "src/app/utilities/createMovieId";
-import favouriteData from "temp/favouriteData";
 
 @Injectable({
 	providedIn: 'root'
 })
 export class FavouritesService {
-	// private favouritesSource = new BehaviorSubject<Movie[]>([]);
-	private favouritesSource = new BehaviorSubject<Movie[]>(favouriteData as Movie[]); // Load movieData on app load for dev
+	private favouritesSource = new BehaviorSubject<Movie[]>([]);
 	favourites$ = this.favouritesSource.asObservable();
 
 	addFavourite(movie: Movie) {
@@ -32,5 +30,9 @@ export class FavouritesService {
 
 	get favourites(): Movie[] {
 		return this.favouritesSource.getValue();
+	}
+
+	get count(): number {
+		return this.favouritesSource.getValue().length;
 	}
 }

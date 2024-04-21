@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'icon-heart',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./icon-heart.component.css']
 })
 export class IconHeartComponent {
-
+  @Input() isFavourite!: boolean;
 }

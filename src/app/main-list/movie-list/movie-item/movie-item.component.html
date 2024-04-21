@@ -27,8 +27,10 @@
 
 	<button
 		class="absolute top-4 right-0 w-6 h-6 group"
-		(click)="addFavourite()"
+		(click)="toggleFavourite()"
 	>
-		<icon-heart></icon-heart>
+		<icon-heart
+			[isFavourite]="isFavourite"
+		></icon-heart>
 	</button>
 </li>
