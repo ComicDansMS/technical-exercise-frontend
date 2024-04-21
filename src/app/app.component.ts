@@ -14,16 +14,38 @@ export class AppComponent {
   searchPerformed: boolean = false;
   searchQuery: SearchQuery = {
     title: null,
-    year: null,
-    genre: null
+    yearList: [],
+    genreList: []
   }
   // movies: Movie[] = [];
   movies: Movie[] = movieData;
 
   constructor(events: EventService, private movieService: MovieService) {
     events.listen('set-title', (titleInput: string) => this.searchQuery.title = titleInput);
-    events.listen('set-year', (yearList: number[]) => this.searchQuery.year = yearList);
-    events.listen('set-genre', (genreList: string[]) => this.searchQuery.genre = genreList);
+
+    events.listen('set-year', (yearInput: number) => {
+      this.searchQuery.yearList.push(yearInput);
+      console.log(this.searchQuery)
+      events.emit('query-filters-updated', this.searchQuery);
+    });
+
+    events.listen('remove-year', (index: number) => {
+      this.searchQuery.yearList.splice(index, 1);
+      console.log(this.searchQuery)
+      events.emit('query-filters-updated', this.searchQuery);
+    });
+
+    events.listen('set-genre', (genreInput: string) => {
+      this.searchQuery.genreList.push(genreInput);
+      events.emit('query-filters-updated', this.searchQuery);
+    });
+
+    events.listen('remove-genre', (index: number) => {
+      this.searchQuery.genreList.splice(index, 1);
+      console.log(this.searchQuery)
+      events.emit('query-filters-updated', this.searchQuery);
+    });
+
     events.listen('get-movies', () => this.getMovies(this.searchQuery));
   }
 
@@ -35,7 +57,6 @@ export class AppComponent {
         console.log({data});
       },
       (error: any) => {
-        // TODO: handle error properly
         console.error('Error getting movies: ', error.message)
       }
     )

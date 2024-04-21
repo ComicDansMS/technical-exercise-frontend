@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { SearchQuery } from 'src/shared/models/searchQuery';
+import { Component } from '@angular/core';
 import { EventService } from 'src/shared/services/eventService';
 
 @Component({

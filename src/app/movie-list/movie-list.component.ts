@@ -13,7 +13,7 @@ export class MovieListComponent {
   get noMoviesMessage(): string {
     if (this.movies.length === 0) {
       if (this.searchPerformed) {
-        return "No movies found. Try a different search!";
+        return "No movies found";
       } else {
         return "Search for a movie or apply filters";
       }

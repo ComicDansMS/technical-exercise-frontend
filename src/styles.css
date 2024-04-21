@@ -4,32 +4,33 @@
 
 /* Base */
 
+button:focus,
 input:focus {
 	outline: none;
 }
 
 body {
-	@apply bg-gray-950 text-slate-300 font-light text-lg px-8 py-16;
+	@apply bg-gray-950 text-slate-300 font-light text-lg px-8 py-16 tracking-wide;
 }
 
 .h1,
 h1 {
-	@apply text-7xl;
+	@apply text-7xl tracking-wide;
 }
 
 .h2,
 h2 {
-	@apply text-5xl;
+	@apply text-5xl tracking-wide;
 }
 
 .h3,
 h3 {
-	@apply text-4xl;
+	@apply text-4xl tracking-wide;
 }
 
 .h4,
 h4 {
-	@apply text-3xl;
+	@apply text-3xl tracking-wide;
 }
 
 /* Layout */

@@ -31,12 +31,12 @@ export class MovieService {
             params = params.append('title', query.title);
         }
 
-        if (query.year) {
-            params = params.append('year', JSON.stringify(query.year));
+        if (query.yearList) {
+            params = params.append('year', JSON.stringify(query.yearList));
         }
 
-        if (query.genre) {
-            params = params.append('genre', JSON.stringify(query.genre));
+        if (query.genreList) {
+            params = params.append('genre', JSON.stringify(query.genreList));
         }
 
         return params;
