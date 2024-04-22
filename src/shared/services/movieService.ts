@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from "@angular
 import { Movie } from "../models/movie";
 import { BehaviorSubject, catchError, throwError } from "rxjs";
 import { SearchQuery } from "../models/searchQuery";
-import { environment } from "src/environment/environment";
 
 @Injectable({
 	providedIn: 'root'
@@ -16,11 +15,10 @@ export class MovieService {
 
 	getMovies(query: SearchQuery) {
 		const options = {
-			headers: this.createHeaders(),
 			params: this.createParams(query),
 		};
 
-		this.http.get<Movie[]>('http://localhost:3000/api/movies', options)
+		this.http.get<Movie[]>('http://localhost:3001/api/movies', options)
 			.pipe(
 				catchError(this.handleError)
 			)
@@ -49,12 +47,6 @@ export class MovieService {
 		params = params.append('limit', 1000);
 
 		return params;
-	}
-
-	private createHeaders() {
-		let headers = new HttpHeaders();
-		headers = headers.append('x-api-key', environment.apiKey);
-		return headers
 	}
 
 	private handleError(error: HttpErrorResponse) {
